@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ملخص سريع — مُحدّث</title>
+    <link rel="icon" href="icon.png" type="image/png" />
+
+    <title>ملخص - CSS</title>
     <style>
         body {
             background-image: url(download.jpeg);
@@ -37,10 +39,14 @@
         }
 
         header nav a {
-            color: #fff;
+            color: #0f508b;
             text-decoration: none;
             margin-left: 30px;
             font-size: 20px;
+        }
+
+        a:hover {
+            color: #503917;
         }
 
         h2 {
@@ -102,77 +108,113 @@
             color: rgb(78, 68, 215);
         }
 
-        /* small responsive tweak to keep original look on mobile */
         @media (max-width: 820px) {
-            header { flex-direction: column; gap: 12px; }
-            header nav a { margin-left: 12px; font-size: 18px; }
-            body { padding: 14px; }
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            header nav a {
+                margin-left: 12px;
+                font-size: 18px;
+            }
+
+            body {
+                padding: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
     <header class="section">
-        <img src="logo.enc" class="logo" alt="RONY Logo" />
+        <img src="mylogo.png" class="logo" alt="RONY Logo" />
         <nav>
-            <a href="https://chat.whatsapp.com/F8LGv7B6xiLGLJEkXCJGE7?mode=wwt" target="_blank">جروب الواتس</a>
-            <a href="https://www.instagram.com/24h_.__" target="_blank">instagram</a>
+            <a href="https://chat.whatsapp.com/F8LGv7B6xiLGLJEkXCJGE7?mode=wwt" target="_blank"><b>جروب الواتس</b></a> 
+            <a href="https://www.instagram.com/24h_.__" target="_blank"><b>instagram</b></a>
         </nav>
     </header>
 
     <h1 class="section">كورس <span>CSS</span> - ملخص</h1>
 
-    <!-- === الفصول الأساسية الموجودة كما هي مع شرح مفصّل مبسّط === -->
-
     <div class="section">
         <h2>الفصل 1: كيفية استدعاء العناصر في CSS</h2>
-        <p>قبل أي تعديل على التصميم لازم نفهم إزاي نوصل للعنصر صح. كل طريقة لها استخدام معين:</p>
-        <hr>
+        <p>
+            قبل أي تعديل على التصميم لازم نفهم إزاي نوصل للعنصر صح. كل طريقة لها
+            استخدام معين:
+        </p>
+        <hr />
         <h3>1) استدعاء العنصر Tag Selector</h3>
-        <p>بنستخدمه لما نريد نعدل كل العناصر من نفس النوع. مثلاً كل &lt;p&gt; في الصفحة.</p>
+        <p>
+            بنستخدمه لما نريد نعدل كل العناصر من نفس النوع. مثلاً كل &lt;p&gt; في
+            الصفحة.
+        </p>
         <code>p { color: red; }</code>
         <p><strong>استخدامه:</strong> مناسب للعناصر العامة اللي مش محتاج تخصص.</p>
-        <hr>
+        <hr />
         <h3>2) استدعاء كلاس Class</h3>
-        <p>الأكثر استخدامًا في CSS لأنه بيدي تحكم كامل بدون ما يأثر على باقي العناصر.</p>
+        <p>
+            الأكثر استخدامًا في CSS لأنه بيدي تحكم كامل بدون ما يأثر على باقي
+            العناصر.
+        </p>
         <code>.box { padding: 20px; }</code>
-        <p><strong>استخدامه:</strong> لما عايز تعمل ستايل لعنصر معين أو مجموعة محددة.</p>
-        <hr>
+        <p>
+            <strong>استخدامه:</strong> لما عايز تعمل ستايل لعنصر معين أو مجموعة
+            محددة.
+        </p>
+        <hr />
         <h3>3) استدعاء ID</h3>
         <p>بيستخدم للعنصر اللي بيظهر مرة واحدة في الصفحة.</p>
         <code>#main { background: black; }</code>
-        <p><strong>استخدامه:</strong> للعناصر الفريدة زي الهيدر — ومينصحش بالاعتماد عليه للستايلات القابلة لإعادة الاستخدام.</p>
-        <hr>
+        <p>
+            <strong>استخدامه:</strong> للعناصر الفريدة زي الهيدر — ومينصحش بالاعتماد
+            عليه للستايلات القابلة لإعادة الاستخدام.
+        </p>
+        <hr />
         <h3>4) استدعاء عنصر داخل عنصر</h3>
         <p>بنستخدمه لما عايزين نعدل عنصر موجود داخل مكان معين.</p>
         <code>div p { font-size: 18px; }</code>
-        <p><strong>استخدامه:</strong> لما نفس العنصر بيتكرر لكن عايز تعدل نسخة موجودة في منطقة معينة.</p>
-        <hr>
+        <p>
+            <strong>استخدامه:</strong> لما نفس العنصر بيتكرر لكن عايز تعدل نسخة
+            موجودة في منطقة معينة.
+        </p>
+        <hr />
         <h3>5) Attribute / Pseudo</h3>
-        <p>اختيارات بالسمات أو بالـpseudo مثل <code>a[href$=".pdf"]</code> أو <code>a:hover</code>.</p>
+        <p>
+            اختيارات بالسمات أو بالـpseudo مثل <code>a[href$=".pdf"]</code> أو
+            <code>a:hover</code>.
+        </p>
     </div>
 
     <div class="section">
         <h2>الفصل 2: الخلفيات Background</h2>
-        <p>الخلفيات تعتبر من أقوى عناصر التصميم. كل خاصية لها قيمة معينة وكل قيمة لها دور محدد.</p>
-        <hr>
+        <p>
+            الخلفيات تعتبر من أقوى عناصر التصميم. كل خاصية لها قيمة معينة وكل قيمة
+            لها دور محدد.
+        </p>
+        <hr />
         <h3>background-color</h3>
         <p><strong>وظيفتها:</strong> تحديد لون الخلفية فقط.</p>
-        <p><strong>متى نستخدمها؟</strong> لعناصر بسيطة أو لو أردت تحسين الأداء.</p>
+        <p>
+            <strong>متى نستخدمها؟</strong> لعناصر بسيطة أو لو أردت تحسين الأداء.
+        </p>
         <code>background-color: #222;</code>
 
-        <hr>
+        <hr />
         <h3>background-image</h3>
         <p><strong>وظيفتها:</strong> وضع صورة أو تدرج كخلفية.</p>
         <ul>
             <li><code>url('img.jpg')</code> — صورة.</li>
-            <li><code>linear-gradient()</code> — تدرج لوني يمكن الاستغناء به عن صور ثقيلة.</li>
+            <li>
+                <code>linear-gradient()</code> — تدرج لوني يمكن الاستغناء به عن صور
+                ثقيلة.
+            </li>
             <li><code>radial-gradient()</code> — تدرج مركزي.</li>
             <li><code>none</code> — لإلغاء الخلفية التصويرية.</li>
         </ul>
         <code>background-image: url("img.jpg");</code>
 
-        <hr>
+        <hr />
         <h3>background-size</h3>
         <p><strong>وظيفتها:</strong> تحدد كيفية ملء الصورة للحاوية.</p>
         <ul>
@@ -183,7 +225,7 @@
         </ul>
         <code>background-size: cover;</code>
 
-        <hr>
+        <hr />
         <h3>background-repeat</h3>
         <p><strong>وظيفتها:</strong> ضبط تكرار الصورة.</p>
         <ul>
@@ -193,24 +235,33 @@
             <li><code>repeat-y</code></li>
         </ul>
 
-        <hr>
+        <hr />
         <h3>background-position</h3>
         <p><strong>وظيفتها:</strong> مكان ظهور الصورة داخل العنصر.</p>
         <ul>
             <li><code>center</code></li>
-            <li><code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code></li>
+            <li>
+                <code>top</code>, <code>bottom</code>, <code>left</code>,
+                <code>right</code>
+            </li>
             <li><code>50% 20%</code> — إحداثيات نسبية.</li>
         </ul>
         <code>background-position: center;</code>
 
-        <hr>
+        <hr />
         <h3>نصيحة مهمة</h3>
-        <p>ضع overlay (تراكب لوني) عندما تستخدم صورًا خلفية ويوجد نص فوقها لضمان تباين مقروئية جيد.</p>
+        <p>
+            ضع overlay (تراكب لوني) عندما تستخدم صورًا خلفية ويوجد نص فوقها لضمان
+            تباين مقروئية جيد.
+        </p>
     </div>
 
     <div class="section">
         <h2>الفصل 3: البادينج Padding</h2>
-        <p><strong>وظيفته:</strong> هو المسافة الداخلية داخل العنصر، بين المحتوى والحد.</p>
+        <p>
+            <strong>وظيفته:</strong> هو المسافة الداخلية داخل العنصر، بين المحتوى
+            والحد.
+        </p>
         <p><strong>القيم:</strong></p>
         <ul>
             <li><strong>padding-top</strong></li>
@@ -219,18 +270,23 @@
             <li><strong>padding-right</strong></li>
             <li><code>padding: top right bottom left;</code> — اختصار.</li>
         </ul>
-        <code>
-        padding: 20px;
-        </code>
-        <p><strong>متى تستخدمه:</strong> داخل الأزرار والبطاقات لإعطاء نفس المسافة حول المحتوى. استخدم <code>em/rem</code> للنسب المعتمدة على حجم الخط.</p>
+        <code> padding: 20px; </code>
+        <p>
+            <strong>متى تستخدمه:</strong> داخل الأزرار والبطاقات لإعطاء نفس المسافة
+            حول المحتوى. استخدم <code>em/rem</code> للنسب المعتمدة على حجم الخط.
+        </p>
     </div>
 
     <div class="section">
         <h2>الفصل 4: المارجن Margin</h2>
-        <p><strong>وظيفته:</strong> مسافة خارجية بين العنصر والعناصر المحيطة به.</p>
+        <p>
+            <strong>وظيفته:</strong> مسافة خارجية بين العنصر والعناصر المحيطة به.
+        </p>
         <p><strong>قواعد ونصائح:</strong></p>
         <ul>
-            <li>يمكن أن يحدث <em>margin collapsing</em> بين عناصر البلوك — راعِ ذلك.</li>
+            <li>
+                يمكن أن يحدث <em>margin collapsing</em> بين عناصر البلوك — راعِ ذلك.
+            </li>
             <li>استخدم <code>margin: 0 auto;</code> لمركزة عرض ثابت.</li>
         </ul>
         <code>margin: 20px;</code>
@@ -239,7 +295,7 @@
     <div class="section">
         <h2>الفصل 5: الحدود Border</h2>
         <p><strong>الحدود</strong> تُستخدم لتحديد إطار حول العنصر.</p>
-        <hr>
+        <hr />
         <h3>border-width</h3>
         <code>border-width: 2px;</code>
         <h3>border-style</h3>
@@ -258,14 +314,21 @@
     <div class="section">
         <h2>الفصل 6: النصوص Text</h2>
         <p>تحكم شامل في مظهر النصوص.</p>
-        <hr>
-        <h3>color</h3><code>color: #fff;</code>
-        <h3>font-size</h3><code>font-size: 20px;</code>
+        <hr />
+        <h3>color</h3>
+        <code>color: #fff;</code>
+        <h3>font-size</h3>
+        <code>font-size: 20px;</code>
         <h3>font-weight</h3>
-        <ul><li>normal / bold / 100-900</li></ul>
+        <ul>
+            <li>normal / bold / 100-900</li>
+        </ul>
         <h3>text-align</h3>
-        <ul><li>right / left / center / justify</li></ul>
-        <h3>line-height</h3><code>line-height: 1.8;</code>
+        <ul>
+            <li>right / left / center / justify</li>
+        </ul>
+        <h3>line-height</h3>
+        <code>line-height: 1.8;</code>
     </div>
 
     <div class="section">
@@ -273,7 +336,9 @@
         <ul>
             <li><strong>HEX</strong> — مثال: <code>#ff00aa</code></li>
             <li><strong>RGB</strong> — مثال: <code>rgb(255,0,0)</code></li>
-            <li><strong>RGBA</strong> — يضيف شفافية: <code>rgba(0,0,0,0.6)</code></li>
+            <li>
+                <strong>RGBA</strong> — يضيف شفافية: <code>rgba(0,0,0,0.6)</code>
+            </li>
             <li><strong>HSL</strong> — تحكم أدق بالدرجة/الإشباع/السطوع.</li>
         </ul>
         <code>color: rgba(255,255,255,0.8);</code>
@@ -292,11 +357,15 @@
     <div class="section">
         <h2>الفصل 9: العرض Display</h2>
         <p>تحدد طريقة ظهور العنصر وتفاعله مع العناصر الأخرى.</p>
-        <hr>
-        <h3>block</h3><p>يكسر السطر ويأخذ العرض الكامل.</p>
-        <h3>inline</h3><p>يكون ضمن السطر ولا يقبل width/height.</p>
-        <h3>inline-block</h3><p>يجمع بين السلوكين.</p>
-        <h3>flex / grid</h3><p>للتصميمات المتقدمة.</p>
+        <hr />
+        <h3>block</h3>
+        <p>يكسر السطر ويأخذ العرض الكامل.</p>
+        <h3>inline</h3>
+        <p>يكون ضمن السطر ولا يقبل width/height.</p>
+        <h3>inline-block</h3>
+        <p>يجمع بين السلوكين.</p>
+        <h3>flex / grid</h3>
+        <p>للتصميمات المتقدمة.</p>
     </div>
 
     <div class="section">
@@ -306,7 +375,9 @@
         <ul>
             <li><code>display: flex;</code></li>
             <li><code>flex-direction: row | column</code></li>
-            <li><code>justify-content: flex-start | center | space-between</code></li>
+            <li>
+                <code>justify-content: flex-start | center | space-between</code>
+            </li>
             <li><code>align-items: stretch | center</code></li>
             <li><code>gap</code> للمسافات بين العناصر</li>
         </ul>
@@ -324,7 +395,9 @@
         <ul>
             <li><code>static</code> — القيمة الافتراضية.</li>
             <li><code>relative</code> — إزاحة بالنسبة لموقعه الطبيعي.</li>
-            <li><code>absolute</code> — يخرج من التدفق ويحدد حسب أقرب حاوية position.</li>
+            <li>
+                <code>absolute</code> — يخرج من التدفق ويحدد حسب أقرب حاوية position.
+            </li>
             <li><code>fixed</code> — يثبت بالنسبة للنافذة.</li>
             <li><code>sticky</code> — يلتصق بعد عبور نقطة معينة عند التمرير.</li>
         </ul>
@@ -334,14 +407,16 @@
     <div class="section">
         <h2>الفصل 13: الظلال Shadows</h2>
         <p>تحكم في ظل العناصر والنصوص.</p>
-        <code>box-shadow: 0 8px 30px rgba(0,0,0,0.5); text-shadow: 0 2px 6px rgba(0,0,0,0.6);</code>
+        <code>box-shadow: 0 8px 30px rgba(0,0,0,0.5); text-shadow: 0 2px 6px
+        rgba(0,0,0,0.6);</code>
     </div>
-
-    <!-- ======= الإضافات المتقدمة (تمّت إضافتها بدون تغيير الشكل) ======= -->
 
     <div class="section">
         <h2>الفصل 14: Transitions — الانتقالات</h2>
-        <p><strong>ما هي:</strong> الانتقالات تسمح بتنعيم التغيير بين حالتين عند تعديل خاصية CSS (مثل hover).</p>
+        <p>
+            <strong>ما هي:</strong> الانتقالات تسمح بتنعيم التغيير بين حالتين عند
+            تعديل خاصية CSS (مثل hover).
+        </p>
         <h3>الخـواص</h3>
         <ul>
             <li><code>transition-property</code></li>
@@ -350,24 +425,31 @@
             <li><code>transition-delay</code></li>
         </ul>
         <code>
-.card{ transition-property: transform, box-shadow; transition-duration: 0.25s; transition-timing-function: ease; }
-.card:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
-        </code>
+        .card{ transition-property: transform, box-shadow; transition-duration:
+        0.25s; transition-timing-function: ease; } .card:hover{ transform:
+        translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+      </code>
     </div>
 
     <div class="section">
         <h2>الفصل 15: Transform — التحويلات</h2>
-        <p><strong>ماذا تفعل:</strong> تغيير موضع/حجم/دوران العنصر بدون إخراجه من التدفق (GPU-accelerated).</p>
+        <p>
+            <strong>ماذا تفعل:</strong> تغيير موضع/حجم/دوران العنصر بدون إخراجه من
+            التدفق (GPU-accelerated).
+        </p>
         <h3>أمثلة:</h3>
         <code>
-.btn{ transition: transform .25s; }
-.btn:hover{ transform: translateY(-4px) scale(1.03); }
-        </code>
+        .btn{ transition: transform .25s; } .btn:hover{ transform:
+        translateY(-4px) scale(1.03); }
+      </code>
     </div>
 
     <div class="section">
         <h2>الفصل 16: Animations — الرسوم المتحركة</h2>
-        <p>بناء حركات معقدة باستخدام <code>@keyframes</code> و <code>animation</code>.</p>
+        <p>
+            بناء حركات معقدة باستخدام <code>@keyframes</code> و
+            <code>animation</code>.
+        </p>
         <pre><code>
 @keyframes float { 0%{ transform: translateY(0) } 100%{ transform: translateY(-8px) } }
 .icon{ animation: float 3s ease-in-out infinite alternate; }
@@ -376,8 +458,13 @@
 
     <div class="section">
         <h2>الفصل 17: Filters & Blend Modes</h2>
-        <p><strong>filter</strong> يطبق تعديلات بصرية: <code>blur(), brightness(), contrast(), saturate()</code></p>
-        <p><strong>mix-blend-mode</strong> يتحكم باندماج الألوان بين طبقات العناصر.</p>
+        <p>
+            <strong>filter</strong> يطبق تعديلات بصرية:
+            <code>blur(), brightness(), contrast(), saturate()</code>
+        </p>
+        <p>
+            <strong>mix-blend-mode</strong> يتحكم باندماج الألوان بين طبقات العناصر.
+        </p>
         <code>img.hero{ filter: saturate(1.2) contrast(1.05); }</code>
     </div>
 
@@ -385,7 +472,10 @@
         <h2>الفصل 18: Opacity — الشفافية</h2>
         <p><strong>قيمة:</strong> من 0 إلى 1 — تؤثر على العنصر بكامله.</p>
         <code>opacity: 0.6;</code>
-        <p>لو تريد خلفية شفافة فقط استخدم rgba على background بدلاً من opacity للعناصر الروتينية.</p>
+        <p>
+            لو تريد خلفية شفافة فقط استخدم rgba على background بدلاً من opacity
+            للعناصر الروتينية.
+        </p>
     </div>
 
     <div class="section">
@@ -403,14 +493,22 @@
         <h2>الفصل 20: Cursor — شكل المؤشر</h2>
         <p>تحكم بسيط لكن مهم لتجربة المستخدم.</p>
         <code>cursor: pointer;</code>
-        <p>قِيَم شائعة: <code>default, pointer, move, text, wait, crosshair</code>.</p>
+        <p>
+            قِيَم شائعة: <code>default, pointer, move, text, wait, crosshair</code>.
+        </p>
     </div>
 
     <div class="section">
         <h2>الفصل 21: Z-index & Stacking Context</h2>
-        <p><strong>z-index</strong> يحدد ترتيب طبقات العناصر عند التداخل — يجب أن يكون العنصر لديه position (غير static).</p>
+        <p>
+            <strong>z-index</strong> يحدد ترتيب طبقات العناصر عند التداخل — يجب أن
+            يكون العنصر لديه position (غير static).
+        </p>
         <code>.modal{ position: fixed; z-index: 9999; }</code>
-        <p>احترس من stacking contexts الناتجة عن خصائص كـ <code>transform</code> أو <code>opacity</code>.</p>
+        <p>
+            احترس من stacking contexts الناتجة عن خصائص كـ <code>transform</code> أو
+            <code>opacity</code>.
+        </p>
     </div>
 
     <div class="section">
@@ -420,7 +518,10 @@
   .section{ padding: 12px; }
   header{ padding: 18px; }
 }</code></pre>
-        <p>أفضل مسار: mobile-first — اكتب قواعد الموبايل ثم أضف قواعد الشاشات الأكبر.</p>
+        <p>
+            أفضل مسار: mobile-first — اكتب قواعد الموبايل ثم أضف قواعد الشاشات
+            الأكبر.
+        </p>
     </div>
 
     <div class="section">
@@ -440,15 +541,18 @@ width: calc(100% - 40px);</code></pre>
     <div class="section">
         <h2>الفصل 25: Mix-blend-mode & Backdrop-filter</h2>
         <p><strong>mix-blend-mode</strong> للتحكم في تراكب الألوان.</p>
-        <p><strong>backdrop-filter</strong> مفيد لتأثيرات الزجاج (glass effect).</p>
-        <code>.glass{ backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }</code>
+        <p>
+            <strong>backdrop-filter</strong> مفيد لتأثيرات الزجاج (glass effect).
+        </p>
+        <code>.glass{ backdrop-filter: blur(12px); -webkit-backdrop-filter:
+        blur(12px); }</code>
     </div>
 
-    <hr>
+    <hr />
 
     <footer>
         تم انشاء هذا الكورس بتاريخ 20/11/2025
-        <br>
+        <br />
         تم الإعداد بواسطة RONY
     </footer>
 </body>
